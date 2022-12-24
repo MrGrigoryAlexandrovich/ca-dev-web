@@ -1,17 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import LogoutIcon from "@mui/icons-material/Logout";
-import {
-  Menu,
-  MenuItem,
-  IconButton,
-  Typography,
-  Avatar,
-  Button,
-} from "@mui/material";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import SearchIcon from "@mui/icons-material/Search";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import { IconButton } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { navigate } from "@reach/router";
 
@@ -69,15 +58,7 @@ export default function AppSettings() {
   const [helpMenu, setHelpMenu] = useState(null);
   const [settingsMenu, setSettingsMenu] = useState(null);
 
-  const openProfileMenu = (event) => setProfileMenu(event.currentTarget);
-  const closeProfileMenu = () => setProfileMenu(null);
-  const openSettingsMenu = (event) => setSettingsMenu(event.currentTarget);
-  const closeSettingsMenu = () => setSettingsMenu(null);
-  const handleLogOutClick = () => dispatch(logOut());
   const onDone = (url) => navigate(url);
-  const handleSubscribe = () => dispatch(getSubscriptionCheckout({ onDone }));
-  const openHelpMenu = (event) => setHelpMenu(event.currentTarget);
-  const closeHelpMenu = () => setHelpMenu(null);
 
   const logout = () => {
     localStorage.removeItem("token");
