@@ -71,7 +71,7 @@ export default function Area({ categories, series = [], colors, title = "" }) {
 
   return (
     <Stack width="100%" height="100%">
-      <Typography variant="h3" color="white" align="center">
+      <Typography variant="h4" color="white" align="center">
         {title}
       </Typography>
       <Chart

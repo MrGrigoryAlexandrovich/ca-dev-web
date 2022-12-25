@@ -19,12 +19,14 @@ import { userSchema } from "./userSchema";
 const useStyles = makeStyles({
   root: {
     background: "black",
-    height: 700,
-    width: 600,
+    height: "100%",
+    width: "100%",
+    margin: 50,
+    paddingBottom: 50,
+    width: 500,
     borderRadius: 30,
     alignSelf: "center",
     alignItems: "center",
-    marginTop: "5%",
     border: "5px solid #fff",
   },
   logo: {

@@ -26,32 +26,32 @@ export default function ChartView({ ratings, loading }) {
         <Loading />
       ) : (
         <Stack className={classes.root}>
-          <Stack height={300} width="100%" direction="row" mb={3}>
-            <Stack flex={1}>
-              <StandardVerticalBarChart
-                title="Total Voting by Rating Categories"
-                categories={ratings.categories}
-                series={ratings.series}
-                colors={["#ff4545", "#FF7F50", "#7BE0D1", "#00E396", "#00AAFF"]}
-                distributed
-              />
-            </Stack>
-            <Stack flex={1} pr={4}>
-              <Pie
-                title="Total Voting in Percentages"
-                categories={ratings?.categories}
-                series={ratings?.series}
-                colors={["#ff4545", "#FF7F50", "#7BE0D1", "#00E396", "#00AAFF"]}
-              />
-            </Stack>
-          </Stack>
-          <Stack height={300} width="100%" mt={9} pt={3}>
+          <Stack height={240} width="100%">
             <Area
               title="Average Rating in the last 5 Active Months"
               series={ratings?.averages}
               categories={ratings?.dates}
               colors={["#ff4545", "#FF7F50", "#7BE0D1", "#00E396", "#00AAFF"]}
             />
+          </Stack>
+          <Stack height={185} width="100%" direction="row" mt={7}>
+            <Stack flex={1} pr={4}>
+              <Pie
+                title="Total Voting in Percentages"
+                categories={ratings?.categories}
+                series={ratings?.series}
+                colors={["#00AAFF", "#00E396", "#7BE0D1", "#FF7F50", "#ff4545"]}
+              />
+            </Stack>
+            <Stack flex={1}>
+              <StandardVerticalBarChart
+                title="Total Voting by Rating Categories"
+                categories={ratings.categories}
+                series={ratings.series}
+                colors={["#00AAFF", "#00E396", "#7BE0D1", "#FF7F50", "#ff4545"]}
+                distributed
+              />
+            </Stack>
           </Stack>
         </Stack>
       )}

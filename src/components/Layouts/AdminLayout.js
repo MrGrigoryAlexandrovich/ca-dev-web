@@ -29,10 +29,10 @@ const useStyles = makeStyles({
   appBar: {
     boxShadow: "none",
   },
-  logoHover: {
+  logo: {
     cursor: "pointer",
-    width: 65,
-    padding: 8,
+    width: 55,
+    padding: 4,
   },
 });
 
@@ -53,7 +53,7 @@ export default function AdminLayout({ component }) {
           >
             <Toolbar>
               <Box mr={2} sx={{ display: "flex", alignItems: "center" }}>
-                <img className={classes.logoHover} src={logo} alt="logo" />
+                <img className={classes.logo} src={logo} alt="logo" />
               </Box>
 
               <div className={classes.title}>
