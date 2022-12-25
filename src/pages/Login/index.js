@@ -16,34 +16,64 @@ import logo from "../../assets/logo.png";
 import { axiosInstance } from "../../services";
 import { userSchema } from "./userSchema";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     background: "black",
     height: "100%",
     width: "100%",
-    margin: 50,
+    margin: 38,
     paddingBottom: 50,
     width: 500,
     borderRadius: 30,
     alignSelf: "center",
     alignItems: "center",
-    border: "5px solid #fff",
+    border: "5px solid #6dd5fa",
+    "&:hover": {
+      border: "5px solid #fff",
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingBottom: 30,
+    },
   },
   logo: {
+    marginTop: -35,
     width: 170,
     height: 170,
+    [theme.breakpoints.down("sm")]: {
+      width: 100,
+      height: 100,
+    },
+  },
+  "@keyframes fade": {
+    "0%": {
+      opacity: 0,
+    },
+    "100%": {
+      opacity: 1,
+    },
   },
   signIn: {
+    padding: 25,
     fontFamily: "Lexend Deca",
-    fontWeight: 400,
     fontSize: 64,
     color: "#fff",
+    background: "linear-gradient(to right, #2980b9, #6dd5fa, #ffffff)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    animation: `$fade 3000ms ${theme.transitions.easing.easeInOut}`,
   },
   login: {
     marginTop: 36,
     width: 150,
     height: 40,
     fontSize: 20,
+    animation: `$fade 3000ms ${theme.transitions.easing.easeInOut}`,
+    color: "#6dd5fa",
+    border: "2px solid #6dd5fa",
+    "&:hover": {
+      color: "#fff",
+      border: "2px solid #fff",
+    },
   },
   visibilityIcon: {
     cursor: "pointer",
@@ -55,7 +85,7 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
   },
-});
+}));
 
 export default function LoginPage() {
   const classes = useStyles();
@@ -188,7 +218,6 @@ export default function LoginPage() {
             )}
           </Stack>
           <Button
-            variant="outlined"
             className={classes.login}
             type="submit"
             disabled={Object.keys(errors).length > 0}

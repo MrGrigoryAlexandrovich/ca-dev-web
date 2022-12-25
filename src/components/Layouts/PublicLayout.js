@@ -5,12 +5,15 @@ import { Grid, CssBaseline } from "@mui/material";
 import { StyledEngineProvider } from "@mui/styled-engine";
 import { Theme } from "../Theme";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   "@global": {
     body: {
       margin: 0,
       padding: 0,
       background: "linear-gradient(to right, #434343 0%, black 100%)",
+      [theme.breakpoints.down("sm")]: {
+        background: "#151919 ",
+      },
     },
   },
   root: {
@@ -20,7 +23,7 @@ const useStyles = makeStyles({
     width: "100%",
     height: "100%",
   },
-});
+}));
 
 export default function PublicLayout({ component }) {
   const classes = useStyles();

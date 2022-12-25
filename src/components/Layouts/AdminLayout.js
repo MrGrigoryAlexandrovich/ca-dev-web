@@ -8,12 +8,15 @@ import AdminMenu from "../../components/Navigation/AdminMenu";
 import AppSettings from "../../components/Navigation/AppSettings";
 import logo from "../../assets/logo.png";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   "@global": {
     body: {
       margin: 0,
       padding: 0,
       background: "linear-gradient(to right, #434343 0%, black 100%)",
+      [theme.breakpoints.down("sm")]: {
+        background: "#151919 ",
+      },
     },
   },
   root: {
@@ -34,7 +37,7 @@ const useStyles = makeStyles({
     width: 55,
     padding: 4,
   },
-});
+}));
 
 export default function AdminLayout({ component }) {
   const classes = useStyles();
